@@ -15,7 +15,7 @@ export default function IconTrailMolecule({
 }) {
   return (
     <motion.div
-      className={`absolute ${position}`}
+      className={`absolute hidden md:block ${position}`}
       variants={iconVariants(delay)}
       animate='animate'
     >
