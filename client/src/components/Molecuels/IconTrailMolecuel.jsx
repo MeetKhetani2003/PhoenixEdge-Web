@@ -1,4 +1,3 @@
-// src/components/Molecules/IconTrailMolecule.jsx
 import { motion } from 'framer-motion';
 
 import IconAtom from '../Atoms/IconAtom';
