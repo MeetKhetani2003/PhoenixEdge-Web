@@ -6,7 +6,6 @@ function CustomCursor() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
-  // Track mouse position
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
@@ -15,7 +14,6 @@ function CustomCursor() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Detect hover on interactive elements and text
   useEffect(() => {
     const handleMouseOver = (e) => {
       const tagName = e.target.tagName.toLowerCase();
