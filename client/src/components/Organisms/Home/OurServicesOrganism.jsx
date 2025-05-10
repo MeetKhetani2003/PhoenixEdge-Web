@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 import { android, graphics, seo, web } from '@/assets/assets';
 import AnimatedHeadingMolecule from '@/components/Molecuels/AnimatedHeadingMolecuel';
-import AnimatedParagraphMolecule from '@/components/Molecuels/AnimatedParagraphMolecule';
+import AnimatedParagraphMolecule from '@/components/Molecuels/AnimatedPAragraphMolecule';
 import ServiceCardMolecule from '@/components/Molecuels/ServiceCardMolecuel';
 
 function OurServicesOrganism() {
