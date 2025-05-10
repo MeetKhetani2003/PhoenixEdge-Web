@@ -1,16 +1,16 @@
 // src/components/Molecules/ParallaxIconsMolecule.jsx
 import {
-  Code,
+  Globe,
   Palette,
   Smartphone,
   Server,
   Search,
   Cloud,
-  Brain,
-  Shield,
+  PenTool,
+  BarChart,
   Layout,
 } from 'lucide-react';
-import { FaBullseye } from 'react-icons/fa';
+import { FaAndroid, FaApple, FaReact, FaBullseye } from 'react-icons/fa';
 
 import IconTrailMolecule from './IconTrailMolecuel';
 
@@ -20,11 +20,15 @@ export default function ParallaxIconsMolecule({
   trailVariants,
 }) {
   const icons = [
-    { Icon: Code, position: 'top-10 left-10', delay: 0 },
-    { Icon: Palette, position: 'top-20 right-20', delay: 0.2 },
-    { Icon: Smartphone, position: 'bottom-20 left-20', delay: 0.4 },
-    { Icon: Search, position: 'top-40 left-40', delay: 0.8 },
-    { Icon: Brain, position: 'bottom-40 right-40', delay: 1.2 },
+    { Icon: FaAndroid, position: 'top-10 left-10', delay: 0 }, // Android Development
+    { Icon: FaApple, position: 'bottom-20 left-10', delay: 0.4 }, // iOS Development
+    { Icon: FaReact, position: 'top-20 right-20', delay: 0.2 }, // React Native Development
+    { Icon: Cloud, position: 'bottom-30 right-40', delay: 1.2 }, // Online Software Development
+    { Icon: Layout, position: 'bottom-80 right-80', delay: 2.8 }, // Web Development (secondary)
+    { Icon: Globe, position: 'top-40 left-40', delay: 0.8 }, // Web Development
+    { Icon: Palette, position: 'top-60 left-60', delay: 1.6 }, // Graphic Designing
+    { Icon: Server, position: 'top-80 left-80', delay: 2.4 }, // Online Software Development (secondary)
+    { Icon: Search, position: 'bottom-60 right-60', delay: 2 }, // SEO Optimization
   ];
 
   return (

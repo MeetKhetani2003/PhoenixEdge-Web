@@ -19,8 +19,8 @@ function HeroOrganism() {
       ),
       subtitle: 'Ignite Your Digital Success',
       description:
-        'Transform your vision into reality with our expert website development services, crafting stunning, responsive, and high-performance websites.',
-      buttonLabel: 'Explore Web Development',
+        'We empower your business with innovative web development, app development, graphic design, software solutions, and SEO strategies.',
+      buttonLabel: 'Explore Our Services',
     },
     {
       title: (
@@ -30,18 +30,29 @@ function HeroOrganism() {
       ),
       subtitle: 'Visuals That Captivate',
       description:
-        'Elevate your brand with eye-catching designs, from logos to marketing materials, tailored to leave a lasting impression.',
+        'Elevate your brand with stunning logos, eye-catching brochures, and creative visual content that leaves a lasting impression.',
       buttonLabel: 'Discover Design Services',
     },
     {
       title: (
         <>
-          Powerful <span className='text-orange-500'>Android Apps</span>
+          Expert <span className='text-orange-500'>Web Development</span>
+        </>
+      ),
+      subtitle: 'Websites That Engage',
+      description:
+        'We build responsive, user-friendly websites that engage visitors and drive business growth with seamless functionality.',
+      buttonLabel: 'Explore Web Development',
+    },
+    {
+      title: (
+        <>
+          Custom <span className='text-orange-500'>Android & iOS Apps</span>
         </>
       ),
       subtitle: 'Innovate on Mobile',
       description:
-        'Build seamless, user-friendly Android applications that engage users and drive your business forward.',
+        'Bring your ideas to life with custom Android and iOS apps designed for performance, scalability, and user experience.',
       buttonLabel: 'Start Your App Journey',
     },
     {
@@ -52,7 +63,7 @@ function HeroOrganism() {
       ),
       subtitle: 'Engineered for Excellence',
       description:
-        'Develop custom software that streamlines operations and empowers your business with cutting-edge technology.',
+        'Streamline your operations with custom software solutions tailored to meet your business challenges and goals.',
       buttonLabel: 'Build Your Software',
     },
     {
@@ -63,7 +74,7 @@ function HeroOrganism() {
       ),
       subtitle: 'Dominate Search Rankings',
       description:
-        'Boost your online visibility and attract more customers with our proven business SEO upgrade strategies.',
+        'Boost your online visibility and attract more customers with our expert SEO strategies.',
       buttonLabel: 'Upgrade Your SEO',
     },
   ];

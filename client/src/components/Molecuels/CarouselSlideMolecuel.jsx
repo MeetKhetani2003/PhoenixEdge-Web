@@ -29,7 +29,7 @@ export default function CarouselSlideMolecule({
     >
       <TextAtom
         tag='h1'
-        className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold my-4 sm:my-6 md:my-8 leading-tight text-blue-900'
+        className='text-3xl sm:text-5xl  font-semibold my-4 sm:my-6 md:my-8 leading-tight text-blue-900'
         variants={{
           initial: { scale: 0.9 },
           animate: { scale: 1 },
@@ -40,7 +40,7 @@ export default function CarouselSlideMolecule({
       </TextAtom>
       <TextAtom
         tag='h2'
-        className='text-xl sm:text-2xl md:text-3xl font-semibold text-blue-900 underline underline-offset-8 my-4 sm:my-6 md:my-8'
+        className='text-xl font-inter sm:text-2xl font-semibold text-blue-900 my-4 sm:my-6 md:my-8'
         variants={{
           initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
@@ -51,7 +51,7 @@ export default function CarouselSlideMolecule({
       </TextAtom>
       <TextAtom
         tag='p'
-        className='text-base sm:text-lg text-blue-950 my-4 sm:my-6 md:my-8 max-w-md mx-auto'
+        className='text-base font-poppins text-blue-950 my-4 sm:my-6 md:my-8 max-w-md mx-auto'
         variants={{
           initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
