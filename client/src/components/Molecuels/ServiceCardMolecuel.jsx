@@ -72,7 +72,7 @@ function ServiceCardMolecule({
   return (
     <motion.div
       ref={cardRef}
-      className='relative bg-white/10 backdrop-blur-md border border-blue-200/40 rounded-xl p-6 sm:p-8 transition-all duration-300 ease-out group hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-500/50 flex flex-col sm:flex-row items-center gap-6 w-full h-[480px] sm:h-[360px]'
+      className='relative bg-white/10 backdrop-blur-md border border-blue-200/40 rounded-xl p-6 sm:p-8 transition-all duration-300 ease-out group hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-500/50 flex flex-col sm:flex-row items-center gap-6 w-full h-[420px] sm:h-[360px]'
       variants={variants}
       custom={custom}
       initial='hidden'
@@ -85,8 +85,8 @@ function ServiceCardMolecule({
       {images.length > 0 && (
         <motion.div
           className={`w-full sm:w-1/2 ${
-            imageOnLeft ? 'order-first' : 'order-last'
-          } relative rounded-lg overflow-hidden h-full`}
+            imageOnLeft ? ' md:order-first ' : 'md:order-last'
+          } relative rounded-lg overflow-hidden h-1/2 sm:h-full`}
           onClick={handleImageClick}
           variants={imageVariants}
         >
@@ -105,8 +105,8 @@ function ServiceCardMolecule({
       {/* Content Section */}
       <motion.div
         className={`w-full sm:w-1/2 flex flex-col justify-center items-start text-left gap-4 ${
-          imageOnLeft ? 'order-last' : 'order-first'
-        }`}
+          imageOnLeft ? 'md:order-last' : 'md:order-first'
+        } h-1/2 sm:h-full`}
         variants={contentVariants}
       >
         {images.length === 0 && (
