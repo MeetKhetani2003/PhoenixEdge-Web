@@ -1,15 +1,20 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
 
-import NavbarMolecuel from '@/components/Molecuels/NavbarMolecuel';
+import React from 'react'
+import NavbarMolecuel from '@/components/Molecuels/NavbarMolecuel'
+import FooterMolecuel from '@/components/Molecuels/FooterMolecuel'
+
+import { Outlet } from 'react-router-dom'
 
 function LayoutTemplate() {
   return (
     <>
-      <div className='sticky top-0 z-50'>
-        <NavbarMolecuel />
-      </div>
-      <Outlet />
+    <div>
+        <NavbarMolecuel/>
+    </div>
+    <Outlet/>
+    <div>
+      <FooterMolecuel/>
+    </div>
     </>
   );
 }
