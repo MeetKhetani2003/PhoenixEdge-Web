@@ -1,27 +1,38 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
-import { Button } from "@/components/ui/button"
+import React from 'react';
 
+import { Button } from '@/components/ui/button';
 
-function ButtonAtom({ label, onClick,variant="outline", className = 'bg-blue-900 text-amber-50' }) {
+function ButtonAtom({ label, onClick, variant = 'default', className = '' }) {
   return (
-    <Button variant={variant}  className={className} onClick={onClick}>
-      {label}
-    </Button>
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: 'spring', stiffness: 400 }}
+    >
+      <Button
+        variant={variant}
+        className={`px-4 py-2 rounded-full font-semibold ${className}`}
+        onClick={onClick}
+      >
+        {label}
+      </Button>
+    </motion.div>
   );
 }
 
 ButtonAtom.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  className: PropTypes.string,
   variant: PropTypes.string,
+  className: PropTypes.string,
 };
 
 ButtonAtom.defaultProps = {
   onClick: () => {},
-  className: 'btn-default',
+  variant: 'default',
+  className: '',
 };
 
 export default ButtonAtom;
-

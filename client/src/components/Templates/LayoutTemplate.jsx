@@ -1,3 +1,4 @@
+
 import React from 'react'
 import NavbarMolecuel from '@/components/Molecuels/NavbarMolecuel'
 import FooterMolecuel from '@/components/Molecuels/FooterMolecuel'
@@ -15,7 +16,7 @@ function LayoutTemplate() {
       <FooterMolecuel/>
     </div>
     </>
-  )
+  );
 }
 
-export default LayoutTemplate
+export default LayoutTemplate;
