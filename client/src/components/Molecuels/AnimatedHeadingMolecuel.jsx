@@ -1,5 +1,4 @@
-import TextAtom from '../atoms/TextAtom';
-import UnderlineAtom from '../atoms/UnderlineAtom';
+import TextAtom from '../Atoms/TextAtom';
 
 function AnimatedHeadingMolecule({ text, className, ref, variants }) {
   return (
