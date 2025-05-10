@@ -1,14 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// src/components/Atoms/TextAtom.jsx
+import { motion } from 'framer-motion';
 
-function TextAtom({text='hello world!', className='text-base text-gray-500'}) {
+export default function TextAtom({ children, tag = 'p', className, variants }) {
+  const Tag = motion[tag] || motion.p;
   return (
-    <p className={className}>{text}</p>
-  )
+    <Tag
+      className={className}
+      variants={variants}
+      initial='initial'
+      animate='animate'
+      transition={variants ? undefined : { type: 'spring', stiffness: 150 }}
+    >
+      {children}
+    </Tag>
+  );
 }
-
-TextAtom.propTypes = {
-    text: PropTypes.string.isRequired,
-}
-
-export default TextAtom
