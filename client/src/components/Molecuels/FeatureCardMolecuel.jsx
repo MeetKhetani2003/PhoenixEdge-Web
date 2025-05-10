@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
-import GlowAtom from '../atoms/GlowAtom';
-import IconAtom from '../atoms/IconAtom';
-import TextAtom from '../atoms/TextAtom';
+import GlowAtom from '../Atoms/GlowAtom';
+import IconAtom from '../Atoms/IconAtom';
+import TextAtom from '../Atoms/TextAtom';
 
 function FeatureCardMolecule({ Icon, title, desc, variants, custom }) {
   return (
