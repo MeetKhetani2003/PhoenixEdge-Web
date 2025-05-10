@@ -4,7 +4,6 @@ function AnimatedHeadingMolecule({ text, className, ref, variants }) {
   return (
     <TextAtom tag='h1' className={className} variants={variants} ref={ref}>
       {text}
-      {/* <UnderlineAtom /> */}
     </TextAtom>
   );
 }
