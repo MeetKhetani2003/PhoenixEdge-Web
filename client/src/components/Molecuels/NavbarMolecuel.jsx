@@ -8,10 +8,10 @@ import LinkAtom from '@/components/Atoms/LinkAtom';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Our Projects' },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact Us' },
-  { href: '/service', label: 'Service' },
-  { href: '/team', label: 'Team' },
 ];
 
 function NavbarMolecule() {
