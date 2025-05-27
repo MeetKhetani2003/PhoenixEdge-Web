@@ -7,36 +7,38 @@ import AnimatedParagraphMolecule from '@/components/Molecuels/AnimatedPAragraphM
 import FeatureCardMolecule from '@/components/Molecuels/FeatureCardMolecuel';
 
 function AboutUsOrganism() {
-  // Refs for scroll-based animations
   const sectionRef = useRef(null);
-  const headingRef = useRef(null);
-  const paragraphRef = useRef(null);
-  const cardsRef = useRef(null);
+  const isSectionInView = useInView(sectionRef, {
+    margin: '-150px', // Trigger earlier
+    once: true, // Play only once
+    amount: 0.2, // Trigger when 20% of the section is visible
+  });
 
-  // Detect when elements are in view
-  const isSectionInView = useInView(sectionRef, { margin: '-50px' });
-  const isHeadingInView = useInView(headingRef, { margin: '-50px' });
-  const isParagraphInView = useInView(paragraphRef, { margin: '-50px' });
-  const isCardsInView = useInView(cardsRef, { margin: '-50px' });
-
-  // Debug: Log paragraph visibility
+  // Debug: Log visibility
   useEffect(() => {
-    console.log('isParagraphInView:', isParagraphInView);
-  }, [isParagraphInView]);
+    console.log('isSectionInView:', isSectionInView);
+  }, [isSectionInView]);
+
+  // Check for reduced motion preference
+  const prefersReducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Animation variants
   const headingVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 },
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.9,
-        ease: 'easeOut',
-        type: 'spring',
-        bounce: 0.4,
-      },
+      transition: prefersReducedMotion
+        ? { duration: 0 }
+        : {
+            duration: 0.7, // Reduced for snappier feel
+            ease: [0.25, 0.1, 0.25, 1], // Custom easing
+            type: 'spring',
+            bounce: 0.4,
+          },
     },
   };
 
@@ -45,28 +47,33 @@ function AboutUsOrganism() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        delay: 0.1,
-        ease: 'easeOut',
-        staggerChildren: 0.01,
-      },
+      transition: prefersReducedMotion
+        ? { duration: 0 }
+        : {
+            duration: 0.5, // Reduced for snappier feel
+            delay: 0.1,
+            ease: [0.25, 0.1, 0.25, 1],
+            // Removed staggerChildren as the effect was minimal
+          },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, scale: 0.7, rotateY: 30 },
+    hidden: { opacity: 0, scale: 0.8, rotateY: 20, y: 40 }, // Added y for parallax effect
     visible: (i) => ({
       opacity: 1,
       scale: 1,
       rotateY: 0,
-      transition: {
-        duration: 0.8,
-        delay: i * 0.2,
-        ease: 'easeOut',
-        type: 'spring',
-        bounce: 0.3,
-      },
+      y: 0,
+      transition: prefersReducedMotion
+        ? { duration: 0 }
+        : {
+            duration: 0.6, // Reduced for snappier feel
+            delay: i * 0.15, // Reduced stagger delay
+            ease: [0.25, 0.1, 0.25, 1],
+            type: 'spring',
+            bounce: 0.3,
+          },
     }),
   };
 
@@ -91,8 +98,9 @@ function AboutUsOrganism() {
     <div
       ref={sectionRef}
       className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 font-inter bg-white overflow-hidden'
+      style={{ willChange: 'transform, opacity' }} // Performance optimization
     >
-      {/* Semi-transparent overlay with noise texture (uncommented for debugging) */}
+      {/* Semi-transparent overlay with noise texture (uncomment if needed) */}
       {/* <div
         className='absolute inset-0 bg-white/40 backdrop-blur-lg z-0'
         style={{
@@ -103,22 +111,21 @@ function AboutUsOrganism() {
       <AnimatedHeadingMolecule
         text='About Phoenix Edge'
         className='relative z-10 text-2xl sm:text-4xl font-bold text-center mb-6 text-blue-900 font-poppins'
-        ref={headingRef}
         variants={headingVariants}
+        isInView={isSectionInView} // Use single isSectionInView
       />
 
       <AnimatedParagraphMolecule
         textSegments={paragraphText}
         className='relative z-20 text-center text-base sm:text-lg text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed'
-        ref={paragraphRef}
         variants={paragraphVariants}
+        isInView={isSectionInView} // Use single isSectionInView
       />
 
       <motion.div
-        ref={cardsRef}
         className='relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16'
         initial='hidden'
-        animate={isCardsInView ? 'visible' : 'hidden'}
+        animate={isSectionInView ? 'visible' : 'hidden'}
       >
         {[
           {
